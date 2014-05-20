@@ -10,17 +10,15 @@ def getClients():
     clients = clients.replace(" ", "\n")
     clients = clients.replace("\r", "")
     clients = clients.split("|")
-    cLen = len(clients)
-    for i in range(0, cLen):
+    for i in range(0, len(clients)):
         try:
             if config["botname"] in clients[i]:
                 clients.remove(clients[i])
             else:
                 clients[i] = clients[i].split("\n")
                 clients[i] = filter(None,clients[i])
-                cLen -= 1
         except IndexError:
-           print "Somehow we've escaped the bounds of the loop. :O Skip it and we should be fine."
+           print "We've escaped the bounds of the loop. :O Skip it and we should be fine."
     return clients
 
 def moveIdlers(clients):
