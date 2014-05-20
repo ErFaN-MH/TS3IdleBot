@@ -11,7 +11,6 @@ def getClients():
     clients = clients.replace("\r", "")
     clients = clients.split("|")
     cLen = len(clients)
-    print clients
     for i in range(0, cLen):
         try:
             if config["botname"] in clients[i]:
